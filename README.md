@@ -1,55 +1,60 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+# 🚀 Arc Network Testnet Showcase
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+Welcome to my smart contract portfolio built on the **Arc Network Testnet**. This repository showcases three distinct, fully functional decentralized applications (dApps) ranging from real-time finance to automated staking and time-locked security vaults.
 
-contract ArcDEX {
-    IERC20 public tokenA;
-    IERC20 public tokenB;
+---
 
-    uint200 public reserveA;
-    uint200 public reserveB;
+## 🛠️ Network Configuration (Arc Testnet)
+To interact with these contracts, configure your wallet with the following settings:
+- **Network Name:** Arc Testnet
+- **RPC URL:** `https://rpc-testnet.arc.network`
+- **Currency Symbol:** ARC
 
-    event Swap(address indexed user, uint256 amountIn, uint256 amountOut, bool aToB);
+---
 
-    constructor(address _tokenA, address _tokenB) {
-        tokenA = IERC20(_tokenA);
-        tokenB = IERC20(_tokenB);
-    }
+## 📅 Project 1: ArcStream (Real-Time Token Streaming)
+ArcStream is a continuous settlement protocol that allows users to stream funds (native ARC tokens) second-by-second to any recipient. It eliminates intermediate friction for payrolls, subscriptions, and freelancing payouts.
 
-    // Constant Product Formula: x * y = k
-    function getAmountOut(uint256 amountIn, uint256 reserveIn, uint256 reserveOut) public pure returns (uint256) {
-        require(amountIn > 0, "Inadequate Input");
-        require(reserveIn > 0 && reserveOut > 0, "Inadequate Liquidity");
-        
-        // Applying a 0.3% fee
-        uint256 amountInWithFee = amountIn * 997;
-        uint256 numerator = amountInWithFee * reserveOut;
-        uint256 denominator = (reserveIn * 1000) + amountInWithFee;
-        return numerator / denominator;
-    }
+### 🚀 Key Features
+- **Continuous Distribution:** Tokens flow continuously based on the fixed start and end time.
+- **Mutual Cancellation:** Senders or receivers can stop the stream early, instantly distributing accrued funds fairly.
+- **On-Chain Analytics:** Real-time stream calculations using strict block timestamp math.
 
-    function swap(uint256 amountIn, bool aToB) external {
-        (IERC20 inToken, IERC20 outToken) = aToB ? (tokenA, tokenB) : (tokenB, tokenA);
-        (uint256 resIn, uint256 resOut) = aToB ? (reserveA, reserveB) : (reserveB, reserveA);
+### 📋 Deployment Info
+- **Contract Type:** `ArcStream.sol`
+- **Verified Contract Address:** `PASTE_YOUR_ARCSTREAM_ADDRESS_HERE`
 
-        uint256 amountOut = getAmountOut(amountIn, resIn, resOut);
-        
-        inToken.transferFrom(msg.sender, address(this), amountIn);
-        outToken.transfer(msg.sender, amountOut);
+---
 
-        _updateReserves();
-        emit Swap(msg.sender, amountIn, amountOut, aToB);
-    }
+## 🏦 Project 2: ArcDeFi (Faucet & Liquid Staking Hub)
+A foundational DeFi ecosystem combining an automated token faucet with a decentralized staking pool. Users can mint custom test tokens and lock them up to earn fixed yield incentives.
 
-    function addLiquidity(uint256 amountA, uint256 amountB) external {
-        tokenA.transferFrom(msg.sender, address(this), amountA);
-        tokenB.transferFrom(msg.sender, address(this), amountB);
-        _updateReserves();
-    }
+### 🚀 Key Features
+- **Token Faucet:** Implements a 24-hour cool-down mapping logic to prevent sybil/spam claims.
+- **Fixed-Rate Staking:** Calculates a 10% premium bonus reward upon completion of the staking locking period.
+- **Dual Contract Integration:** Staking pool safely interfaces with standard custom ERC-20 token transfer rules.
 
-    function _updateReserves() internal {
-        reserveA = uint200(tokenA.balanceOf(address(this)));
-        reserveB = uint200(tokenB.balanceOf(address(this)));
-    }
-}# arctestnet
+### 📋 Deployment Info
+- **Custom Token Address (ARCX):** `PASTE_YOUR_ARCX_TOKEN_ADDRESS_HERE`
+- **Staking Hub Address:** `PASTE_YOUR_ARCSTAKING_ADDRESS_HERE`
+
+---
+
+## 🔒 Project 3: ArcGuard (Time-Locked Crypto Vault)
+ArcGuard serves as a smart contract security vault. It ensures total asset protection against physical threats or wallet hacks by hard-locking crypto assets until a specified epoch Unix timestamp is reached.
+
+### 🚀 Key Features
+- **Immutably Locked:** Funds cannot be withdrawn under any circumstances before the unlock timestamp passes.
+- **Dynamic Lock Duration:** Users can customize individual locking timers dynamically upon every deposit.
+- **Time Tracking View:** Built-in helper view functions to track exact remaining seconds on-chain.
+
+### 📋 Deployment Info
+- **Vault Contract Address:** `PASTE_YOUR_ARCGUARD_ADDRESS_HERE`
+
+---
+
+## 💻 How to Run Locally
+
+1. **Clone the repo:**
+   ```bash
+   git clone [https://github.com/deshikingkhan-gif/arctestnet.git](https://github.com/deshikingkhan-gif/arctestnet.git)
