@@ -1,6 +1,6 @@
 # 🚀 Arc Network Testnet Showcase
 
-Welcome to my smart contract portfolio built on the **Arc Network Testnet**. This repository showcases three distinct, fully functional decentralized applications (dApps) ranging from real-time finance to automated staking and time-locked security vaults.
+Welcome to my smart contract portfolio built on the **Arc Network Testnet**. This repository showcases three distinct, fully functional decentralized applications (dApps) ranging from real-time finance to custom tokens and time-locked security vaults.
 
 ---
 
@@ -26,17 +26,16 @@ ArcStream is a continuous settlement protocol that allows users to stream funds 
 
 ---
 
-## 🏦 Project 2: ArcDeFi (Faucet & Liquid Staking Hub)
-A foundational DeFi ecosystem combining an automated token faucet with a decentralized staking pool. Users can mint custom test tokens and lock them up to earn fixed yield incentives.
+## 🏦 Project 2: ArcDeFi (Custom Token Faucet)
+A foundational DeFi asset featuring a custom mintable ERC-20 token ecosystem with an integrated faucet mechanism. Users can mint custom test tokens directly from the contract.
 
 ### 🚀 Key Features
-- **Token Faucet:** Implements a 24-hour cool-down mapping logic to prevent sybil/spam claims.
-- **Fixed-Rate Staking:** Calculates a 10% premium bonus reward upon completion of the staking locking period.
-- **Dual Contract Integration:** Staking pool safely interfaces with standard custom ERC-20 token transfer rules.
+- **Token Faucet:** Implements a mechanism to claim custom test tokens easily.
+- **Standard ERC-20:** Fully compatible with standard decentralized wallets and DeFi liquidity rules.
+- **Minting Logic:** Allows on-demand generation of test assets for eco-system testing purposes.
 
 ### 📋 Deployment Info
 - **Custom Token Address (ARCX):** `0xD863B827715c8fa7E2a065Adc735002c56aDB710`
-- **Staking Hub Address:** `0xfb996D74e50337A17fE90D375997637f3747A468`
 
 ---
 
