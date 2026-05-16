@@ -22,7 +22,7 @@ ArcStream is a continuous settlement protocol that allows users to stream funds 
 
 ### 📋 Deployment Info
 - **Contract Type:** `ArcStream.sol`
-- **Verified Contract Address:** `0x6db799f24E6De59D7b233aB3D7F5CEB66be18a0F`
+- **Verified Contract Address:** `0x808a95A731108D6f06B1BFf8C402Aa07670e3f71`
 
 ---
 
@@ -35,7 +35,7 @@ A foundational DeFi ecosystem combining an automated token faucet with a decentr
 - **Dual Contract Integration:** Staking pool safely interfaces with standard custom ERC-20 token transfer rules.
 
 ### 📋 Deployment Info
-- **Custom Token Address (ARCX):** `0x386df2736CDe867f70bE05A1d257176E3666A696`
+- **Custom Token Address (ARCX):** `0xD863B827715c8fa7E2a065Adc735002c56aDB710`
 - **Staking Hub Address:** `0xfb996D74e50337A17fE90D375997637f3747A468`
 
 ---
@@ -49,7 +49,7 @@ ArcGuard serves as a smart contract security vault. It ensures total asset prote
 - **Time Tracking View:** Built-in helper view functions to track exact remaining seconds on-chain.
 
 ### 📋 Deployment Info
-- **Vault Contract Address:** `0xB3f49D85698b634351a9a8beA685e8396e9AdCcE`
+- **Vault Contract Address:** `0xFEb6190B2324Ca79858814Ca97030D0EF7De4c7F`
 
 ---
 
